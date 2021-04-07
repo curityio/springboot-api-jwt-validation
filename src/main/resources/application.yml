@@ -6,7 +6,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: https://login-garcher.eu.ngrok.io/oauth/v2/oauth-anonymous
+          issuer-uri: https://idsvr.example.com/oauth/v2/oauth-anonymous
 
 logging:
   level:

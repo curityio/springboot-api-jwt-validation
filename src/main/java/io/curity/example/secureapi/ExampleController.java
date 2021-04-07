@@ -12,18 +12,20 @@ public class ExampleController {
 
     @GetMapping("/services")
     public List<String> jwtProtected(@AuthenticationPrincipal Jwt jwt) {
+
         String role = jwt.getClaimAsString("role");
         return getServices("developer".equals(role));
     }
 
     private List<String> getServices(boolean developer) {
+
         List<String> services = new ArrayList<>();
         services.add("https://localhost/service/email");
         services.add("https://localhost/service/support");
         if (developer) {
             services.add("https://localhost/service/devportal");
         }
-        return services;
 
+        return services;
     }
 }
