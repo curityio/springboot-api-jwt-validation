@@ -7,7 +7,7 @@ How to use Spring Boot as an OAuth Filter to manage JWT validation and API autho
 
 ## Documentation
 
-]This repository is documented in the [Spring Boot API Tutorial](https://curity.io/resources/learn/spring-boot-api/).
+This repository is documented in the [Spring Boot API Tutorial](https://curity.io/resources/learn/spring-boot-api/) article on the Curity Web Site.
 
 ## More Information
 
