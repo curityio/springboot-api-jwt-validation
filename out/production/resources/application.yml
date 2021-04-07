@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://login-garcher.eu.ngrok.io/oauth/v2/oauth-anonymous
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
