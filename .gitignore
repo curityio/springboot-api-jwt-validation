@@ -1,6 +1,7 @@
 logs
 .DS_Store
 /target/*
+/out/*
 dist
 .gradle
 **/build/
