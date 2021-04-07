@@ -3,7 +3,7 @@
 [![Quality](https://img.shields.io/badge/quality-experiment-red)](https://curity.io/resources/code-examples/status/)
 [![Availability](https://img.shields.io/badge/availability-source-blue)](https://curity.io/resources/code-examples/status/)
 
-How to use Spring Boot as an OAuth Filter to manage JWT validation and API authorization via claims
+How to use Spring Boot as an OAuth framework for managing JWT validation and API authorization via scopes and claims
 
 ## Documentation
 
