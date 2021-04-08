@@ -3,7 +3,8 @@
 [![Quality](https://img.shields.io/badge/quality-experiment-red)](https://curity.io/resources/code-examples/status/)
 [![Availability](https://img.shields.io/badge/availability-source-blue)](https://curity.io/resources/code-examples/status/)
 
-How to use Spring Boot as an OAuth framework for managing JWT validation and API authorization via scopes and claims
+A basic sample to show how to use Spring Boot as an OAuth framework for managing JWT validation.\
+After validating the JWT, the controller then uses scopes and claims from the API when serving data.
 
 ## Documentation
 
