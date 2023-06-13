@@ -29,7 +29,9 @@ public class ExampleController {
     @GetMapping("/services")
     public List<String> jwtProtected(@AuthenticationPrincipal Jwt jwt) {
 
+        System.out.println("*** HERE");
         String role = jwt.getClaimAsString("role");
+        System.out.println("*** role is " + role);
         return getServices("developer".equals(role));
     }
 
