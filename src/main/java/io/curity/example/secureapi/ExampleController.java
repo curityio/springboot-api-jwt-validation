@@ -28,7 +28,6 @@ public class ExampleController {
 
     @GetMapping("/services")
     public List<String> jwtProtected(@AuthenticationPrincipal Jwt jwt) {
-
         String role = jwt.getClaimAsString("role");
         return getServices("developer".equals(role));
     }

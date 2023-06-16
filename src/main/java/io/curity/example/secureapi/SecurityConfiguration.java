@@ -17,24 +17,25 @@
 package io.curity.example.secureapi;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.oauth2.jwt.JwtDecoders;
+import org.springframework.security.web.SecurityFilterChain;
 
-@EnableWebSecurity
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+@Configuration
+public class SecurityConfiguration {
 
     @Value("${spring.security.oauth2.resourceserver.jwt.issuer-uri}")
     String issuerUri;
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    @Bean
+    public SecurityFilterChain filterChain(final HttpSecurity http) throws Exception {
 
-        http
-                .authorizeRequests(authorizeRequests ->
+        return http
+                .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
-                                .antMatchers("/services").hasAuthority("SCOPE_services:read")
+                                .requestMatchers("/services").hasAuthority("SCOPE_services:read")
                                 .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer(oauth2ResourceServer ->
@@ -42,6 +43,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                                 .jwt(jwt ->
                                         jwt.decoder(JwtDecoders.fromIssuerLocation(issuerUri))
                                 )
-                );
+                ).build();
     }
 }
